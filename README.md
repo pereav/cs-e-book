@@ -20,6 +20,9 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
+# open browser and navigate to localhost:8080
+<enjoy!>
+
 ```
 
 ### Documentations
