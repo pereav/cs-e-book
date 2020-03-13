@@ -5,6 +5,7 @@
 
 			<v-list-item
 				v-for="chapter in chapters"
+				:key="chapter.name"
 			>
 				{{ chapter.name }} : <v-card light> {{ chapter.progressPercentage }} </v-card>
 			</v-list-item>
