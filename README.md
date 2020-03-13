@@ -2,6 +2,23 @@
 
 ---
 
+## Build Setup
+
+``` bash
+# checkout to master branch
+git checkout master
+
+# install node and npm
+<depending on your machine>
+
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+```
+
 ### Documentations
 * [RESTFUL API](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.1&tabs=visual-studio)
 
