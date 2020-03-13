@@ -8,6 +8,9 @@
 # checkout to master branch
 git checkout master
 
+# update local master branch
+git pull origin master 
+
 # install node and npm
 <depending on your machine>
 
