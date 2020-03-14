@@ -1,5 +1,6 @@
 <template>
 	<v-card
+		id="chapter-list-container"
 	  	dark
 	    max-width="500"
   	>
@@ -12,7 +13,9 @@
       	>
       		<!-- Chapter Title -->
 	        <template v-slot:activator>
-	        	<v-list-item-content>
+	        	<v-list-item-content
+					@click="changeContentView(chapter)"
+	        	>
 	            	<v-list-item-title> {{ chapter.title }} </v-list-item-title>
 	        	</v-list-item-content>
 	        </template>
@@ -21,9 +24,10 @@
 	        <v-list-item
 	        	v-for="subChapter in chapter.sections"
 	        	:key="subChapter.title"
-	        	@click=""
 	        >
-	          	<v-list-item-content>
+	          	<v-list-item-content
+		        	@click="changeContentView(subChapter)"
+	          	>
 	            	<v-list-item-title> <pre> {{ subChapter.title }} </pre> </v-list-item-title>
 	          	</v-list-item-content>
 	        </v-list-item>
@@ -35,12 +39,19 @@
 </template>
 <script>
 import { CHAPTERS } from '@/constants/chapters/'
+import { bus } from '@/main.js'
 
 export default {
 	name: 'ChapterListContainer',
     data () {
       return {
       }
+    },
+    mounted () {
+
+    },
+    beforeDestroy () {
+
     },
     watch: {
     	chaptersList: (v) => {
@@ -56,12 +67,21 @@ export default {
     			return obj
     		})
     	}
+    },
+    methods: {
+    	changeContentView (subChapterContent) {
+    		console.log('SUB CONTENT ', subChapterContent)
+    		bus.$emit('changeContentView', subChapterContent)
+    	},
     }
   }
 </script>	
 
 <style>
-.ps {
+#chapter-list-container .ps {
   height: 80vh;
+}
+.v-list-item__content > .v-list-item__title {
+	cursor: pointer!important;
 }
 </style>
