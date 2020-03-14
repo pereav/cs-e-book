@@ -2,7 +2,12 @@
 	<v-card flat id="content-page-container">
 	  	<perfect-scrollbar>
 
-	  		<v-card flat v-html="contentBody.description"/>
+	  		<v-card
+	  			v-if='contentBody.description'
+	  			flat
+	  			v-html="contentBody.description"
+	  		/>
+
 	  		<span v-if="contentBody.objectives && contentBody.objectives.length>0">
 	  			<b>OBJECTIVES</b>
 	  		</span>
@@ -41,6 +46,11 @@ export default {
 	},
 	beforeDestory () {
 		bus.$off('changeContentView');	
+	},
+	methods: {
+		scrollToTop() {
+            window.scrollTo(0,0);
+        }
 	}
 }
 </script>

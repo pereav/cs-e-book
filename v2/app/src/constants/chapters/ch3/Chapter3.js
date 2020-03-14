@@ -1,5 +1,5 @@
 export const CHAPTER3 = {
-	title: `Chapter 3`,
+	title: `Chapter III`,
 	description: `<h1 align = center>CHAPTER 3</h1>
 				<h2 align = center>DISK OPERATING SYSTEM COMMANDS</h2>`,
 	objectives: [

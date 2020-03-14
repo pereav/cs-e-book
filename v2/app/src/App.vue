@@ -18,4 +18,14 @@ export default {
   color: #2c3e50;
   overflow: hidden!important;
 }
+.section-title {
+	font-weight: 400px;
+	text-align: center;
+}
+.terminal-box {
+	border: 3px solid black;
+	width: 84%;
+	padding: 10px;
+	margin: 50px;
+}
 </style>
