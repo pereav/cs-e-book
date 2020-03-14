@@ -82,7 +82,7 @@ namespace AnswerApi.Controllers
             _context.UserAnswers.Add(userAnswer);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUserAnswer", new { id = userAnswer.Id }, userAnswer);
+            return CreatedAtAction(nameof(GetUserAnswer), new { id = userAnswer.Id }, userAnswer);
         }
 
         // DELETE: api/Answers/5
