@@ -1,9 +1,11 @@
 <template>
 	<v-card flat id="content-page-container">
-		
-		<v-card flat>
-			{{ sampleText }}
-		</v-card>	
+	  	<perfect-scrollbar>
+
+	  		<v-card flat v-html="contentBody.description"/>
+			<v-card flat v-html="contentBody.content"/>
+
+	  	</perfect-scrollbar>
 
 		<navigation-toolbar class="nav-tbar"/>
 	</v-card>		
@@ -11,6 +13,8 @@
 
 <script>
 import NavigationToolbar from '@/components/NavigationToolbar'
+import { CHAPTERS } from '@/constants/chapters/'
+import { bus } from '@/main.js'
 
 export default {
 	name: 'PageContentContainer',
@@ -19,13 +23,23 @@ export default {
 	},
 	data: () => {
 		return {
-			sampleText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."			
+			contentBody: CHAPTERS[0]
 		}
-
+	},
+	mounted () {
+		bus.$on('changeContentView', (data) => {
+			this.contentBody = data;
+		})
+	},
+	beforeDestory () {
+		bus.$off('changeContentView');	
 	}
 }
 </script>
 <style>
+#content-page-container .ps {
+  height: 60vh;
+}
 #content-page-container {
 	position: relative;
 	padding: 50px 50px;
