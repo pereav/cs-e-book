@@ -77,6 +77,9 @@ git pull origin master
 # install node and npm
 <depending on your machine>
 
+# change directory to where package.json is
+cd v2/app
+
 # install dependencies
 npm install
 
