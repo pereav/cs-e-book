@@ -9,6 +9,7 @@ import 'vuetify/dist/vuetify.min.css'
 import PerfectScrollbar from 'vue2-perfect-scrollbar'
 import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 export const bus = new Vue();
+import Vuex from 'vuex'
 
 Vue.use(PerfectScrollbar)
 
@@ -21,6 +22,8 @@ const vuetifyOptions = {
 }
 
 Vue.use(Vuetify)
+
+Vue.use(Vuex)
 
 new Vue({
 	router,

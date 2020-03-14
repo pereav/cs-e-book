@@ -24,6 +24,7 @@
 	        <v-list-item
 	        	v-for="subChapter in chapter.sections"
 	        	:key="subChapter.title"
+	        	class="pa-5"
 	        >
 	          	<v-list-item-content
 		        	@click="changeContentView(subChapter)"
