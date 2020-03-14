@@ -12,7 +12,7 @@
       		<!-- Chapter Title -->
 	        <template v-slot:activator>
 	        	<v-list-item-content>
-	            	<v-list-item-title v-text="item.title"></v-list-item-title>
+	            	<v-list-item-title> <b>{{ item.title }}</b> </v-list-item-title>
 	        	</v-list-item-content>
 	        </template>
 
@@ -22,7 +22,7 @@
 	        	:key="subItem.title"
 	        >
 	          	<v-list-item-content>
-	            	<v-list-item-title v-text="subItem.title"></v-list-item-title>
+	            	<v-list-item-title> {{ subItem.title }} </v-list-item-title>
 	          	</v-list-item-content>
 	        </v-list-item>
 	        

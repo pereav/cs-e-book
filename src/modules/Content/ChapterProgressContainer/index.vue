@@ -1,7 +1,7 @@
 <template>
 	<v-card dark>
 		<v-list dense>
-			<v-list-title> <b>COMPLETED</b> </v-list-title>
+			<v-list-item-title> <b>COMPLETED</b> </v-list-item-title>
 
 			<v-list-item
 				v-for="chapter in chapters"

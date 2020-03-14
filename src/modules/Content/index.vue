@@ -6,7 +6,9 @@
 		>
 			<v-layout row wrap>
 				<v-flex class="content-col" xs2>
-					<chapter-list-container/>	
+					<chapter-list-container
+						:chaptersList="chaptersList"
+					/>	
 				</v-flex>	
 				<v-flex class="content-col" xs8>
 					<page-content-container/>	
@@ -24,6 +26,7 @@ import PageHeader from '@/components/PageHeader'
 import ChapterListContainer from './ChapterListContainer/'
 import PageContentContainer from './PageContentContainer/'
 import ChapterProgressContainer from './ChapterProgressContainer/'
+import { CHAPTERS } from '@/constants/chapters/'
 
 export default {
 	name: 'Content',
@@ -32,7 +35,14 @@ export default {
 		ChapterListContainer,
 		PageContentContainer,
 		ChapterProgressContainer
+	},
+	data: () => ({
+		chaptersList: CHAPTERS
+	}),
+	mounted () {
+		console.log('CHAPTERS ', CHAPTERS)
 	}
+
 }
 </script>
 
