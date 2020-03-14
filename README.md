@@ -4,27 +4,8 @@ Assigned sa CEIT-03-1001p [Assembly book](#books).
 ---
 
 ## Build Setup
-
-``` bash
-# checkout to master branch
-git checkout master
-
-# update local master branch
-git pull origin master 
-
-# install node and npm
-<depending on your machine>
-
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# open browser and navigate to localhost:8080
-<enjoy!>
-
-```
+vue.js
+* see [v2/app/README.md](https://github.com/pereav/cs-e-book/tree/master/v2/app)
 
 ### Documentations
 * [RESTFUL API](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.1&tabs=visual-studio)
