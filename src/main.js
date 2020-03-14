@@ -6,6 +6,11 @@ import router from './router'
 import Vuetify from 'vuetify'
 import '@mdi/font/css/materialdesignicons.min.css'
 import 'vuetify/dist/vuetify.min.css'
+import PerfectScrollbar from 'vue2-perfect-scrollbar'
+import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
+export const bus = new Vue();
+
+Vue.use(PerfectScrollbar)
 
 Vue.config.productionTip = false
 

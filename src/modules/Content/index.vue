@@ -24,6 +24,7 @@ import PageHeader from '@/components/PageHeader'
 import ChapterListContainer from './ChapterListContainer/'
 import PageContentContainer from './PageContentContainer/'
 import ChapterProgressContainer from './ChapterProgressContainer/'
+import { CHAPTERS } from '@/constants/chapters/'
 
 export default {
 	name: 'Content',
@@ -32,6 +33,11 @@ export default {
 		ChapterListContainer,
 		PageContentContainer,
 		ChapterProgressContainer
+	},
+	data: () => ({
+	}),
+	mounted () {
+		console.log('CHAPTERS ', CHAPTERS)
 	}
 }
 </script>
