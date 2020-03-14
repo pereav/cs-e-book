@@ -30,7 +30,12 @@
 </template>
 
 <script>
-
+export default {
+	name: 'Login',
+	mounted () {
+		console.log('LOGIN ', this.$store.state.chapters)
+	}
+}
 </script>
 
 <style>

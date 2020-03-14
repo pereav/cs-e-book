@@ -7,7 +7,7 @@ export const CHAPTER3 = {
 		`Apply the concepts discussed here in hands-on activities.`,
 		`Integrate the significance of practice makes perfect attitude in mastering DOS commands.`,
 	],
-	sections: [
+	sub: [
 		{
 			title: 'Disk Operating System',
 			content: `
