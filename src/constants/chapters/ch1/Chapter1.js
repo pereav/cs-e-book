@@ -65,9 +65,7 @@ export const CHAPTER1 = {
 					content: ''
 				},
 			]
-		}
-	],
-	lab: [
+		},
 		{
 			title: 'Lecture Exercise 1',
 			content: ''
@@ -109,6 +107,5 @@ export const CHAPTER1 = {
 			content: ''
 		},
 	]
-
 
 };
