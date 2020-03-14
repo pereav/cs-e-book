@@ -3,6 +3,14 @@
 	  	<perfect-scrollbar>
 
 	  		<v-card flat v-html="contentBody.description"/>
+	  		<span v-if="contentBody.objectives && contentBody.objectives.length>0">
+	  			<b>OBJECTIVES</b>
+	  		</span>
+	  		<li
+	  			v-for="objective in contentBody.objectives"
+	  			flat
+	  			v-html="objective"
+	  		/>
 			<v-card flat v-html="contentBody.content"/>
 
 	  	</perfect-scrollbar>
