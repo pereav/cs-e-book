@@ -8,7 +8,6 @@ import PerfectScrollbar from 'vue2-perfect-scrollbar'
 export const bus = new Vue();
 import Vuex from 'vuex'
 import store from './store'
-import 'vue-material-design-icons/styles.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import 'vuetify/dist/vuetify.min.css'
 import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
