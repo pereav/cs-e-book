@@ -1,4 +1,5 @@
 .DS_Store
+node_modules
 v2/app/node_modules
 v2/app/dist
 
