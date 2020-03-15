@@ -21,7 +21,10 @@
 
 	  	</perfect-scrollbar>
 
-		<navigation-toolbar class="nav-tbar"/>
+		<navigation-toolbar 
+			class="nav-tbar" 
+			:next_content_body="nextContentBody"
+		/>
 	</v-card>		
 </template>
 
@@ -37,7 +40,7 @@ export default {
 	},
 	data: () => {
 		return {
-			minReadTime: 500,
+			minReadTime: 2000,
 			contentBody: CHAPTERS[0],
 			nextContentBody: null
 		}
@@ -62,7 +65,7 @@ export default {
 
 		this.changeStatus()
 	},
-	beforeDestory () {
+	beforeDestroy () {
 		bus.$off('changeContentView');	
 	},
 	methods: {
@@ -74,7 +77,6 @@ export default {
 				this.contentBody.read_status = 'In Progress'
 			}
 
-			// 30 secs
 			let timeout = setTimeout(() => {
 				if (this.contentBody.read_status) {
 					this.contentBody.read_status = 'Done'
