@@ -1,16 +1,15 @@
 .DS_Store
 node_modules
-v2/app/node_modules
-v2/app/dist
+/dist
 
 # local env files
-v2/app/.env.local
-v2/app.env.*.local
+.env.local
+.env.*.local
 
 # Log files
-v2/app/npm-debug.log*
-v2/app/yarn-debug.log*
-v2/app/yarn-error.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Editor directories and files
 .idea
