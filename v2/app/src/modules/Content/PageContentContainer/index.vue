@@ -13,6 +13,7 @@
 	  		</span>
 	  		<li
 	  			v-for="objective in contentBody.objectives"
+					:key="objective"
 	  			flat
 	  			v-html="objective"
 	  		/>
@@ -36,21 +37,54 @@ export default {
 	},
 	data: () => {
 		return {
-			contentBody: CHAPTERS[0]
+			minReadTime: 500,
+			contentBody: CHAPTERS[0],
+			nextContentBody: null
+		}
+	},
+	created() {
+		if (!this.nextContentBody) {
+			if (CHAPTERS[0] && CHAPTERS[0].sub.length > 0 && CHAPTERS[0].sub[0]) {
+				this.nextContentBody = CHAPTERS[0].sub[0]
+			}
 		}
 	},
 	mounted () {
-		bus.$on('changeContentView', (data) => {
-			this.contentBody = data;
+		bus.$on('changeContentView', ({ content, next }) => {
+			this.contentBody = content;
+
+			if (next) {
+				this.nextContentBody = next;
+			}
+
+			this.changeStatus()
 		})
+
+		this.changeStatus()
 	},
 	beforeDestory () {
 		bus.$off('changeContentView');	
 	},
 	methods: {
 		scrollToTop() {
-            window.scrollTo(0,0);
-        }
+			window.scrollTo(0,0);
+		},
+		changeStatus () {
+			if (this.contentBody.read_status && this.contentBody.read_status === 'Disabled') {
+				this.contentBody.read_status = 'In Progress'
+			}
+
+			// 30 secs
+			let timeout = setTimeout(() => {
+				if (this.contentBody.read_status) {
+					this.contentBody.read_status = 'Done'
+				}
+				if (this.nextContentBody && this.nextContentBody.read_status && this.nextContentBody.read_status === 'Disabled') {
+					this.nextContentBody.read_status = 'In Progress'
+				}
+				clearTimeout(timeout)
+			}, this.minReadTime);
+		}
 	}
 }
 </script>

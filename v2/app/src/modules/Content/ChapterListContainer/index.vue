@@ -4,6 +4,12 @@
 	  	dark
 	    max-width="500"
   	>
+    <v-progress-linear
+      :value="progress"
+      height="25"
+    >
+      <strong>{{ progress }}%</strong>
+    </v-progress-linear>
   	<perfect-scrollbar>
     <list-container :nodes="chaptersList"/>
 	</perfect-scrollbar>
@@ -35,7 +41,35 @@ export default {
           v.active = i === 0 ? true : false;
           return v
     		})
-    	}
+      },
+      progress() {
+        const TOTAL_READ = this.getTotalRead(this.chaptersList)
+        const TOTAL_PAGES = this.getTotalPages(this.chaptersList)
+
+        return Math.ceil((TOTAL_READ / TOTAL_PAGES) * 100)
+      }
+    },
+    methods: {
+      getTotalPages(chaptersList) {
+        let total = chaptersList.length
+        chaptersList.map(chapter => {
+          if (chapter.sub && chapter.sub.length > 0) {
+            total += this.getTotalPages(chapter.sub)
+          }
+        })
+        return total
+      },
+      getTotalRead(chaptersList) {
+        return chaptersList.reduce((total, chapter) => {
+          if (chapter.read_status && chapter.read_status === 'Done') {
+            total++ 
+          }
+          if (chapter.sub && chapter.sub.length > 0) {
+            total += this.getTotalRead(chapter.sub)
+          }
+          return total
+        }, 0);
+      }
     }
   }
 </script>	
