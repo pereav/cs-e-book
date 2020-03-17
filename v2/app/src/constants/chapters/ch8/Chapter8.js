@@ -31,7 +31,7 @@ export const CHAPTER8 = {
 	<br>
 	<p>Format of Filename Structure</p>
 <p><pre>
-	[base name] . [extension name]
+	&lt;base name&gt; . &lt;extension name&gt;
 </pre></p>
 
 <p>Step 2:	Then, you can type now your program, just like using an MS Word application.</p>
