@@ -22,14 +22,14 @@ namespace AnswerApi.Controllers
 
         // GET: api/Answers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserAnswer>>> GetUserAnswers()
+        public async Task<ActionResult<IEnumerable<UserAnswerTDO>>> GetUserAnswers()
         {
-            return await _context.UserAnswers.ToListAsync();
+            return await _context.UserAnswers.Select(x => ItemToDTO(x)).ToListAsync();
         }
 
         // GET: api/Answers/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserAnswer>> GetUserAnswer(long id)
+        public async Task<ActionResult<UserAnswerTDO>> GetUserAnswer(long id)
         {
             var userAnswer = await _context.UserAnswers.FindAsync(id);
 
@@ -45,14 +45,14 @@ namespace AnswerApi.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserAnswer(long id, UserAnswer userAnswer)
+        public async Task<IActionResult> PutUserAnswer(long id, UserAnswerTDO userAnswerTDO)
         {
-            if (id != userAnswer.Id)
+            if (id != userAnswerTDO.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(userAnswer).State = EntityState.Modified;
+            _context.Entry(userAnswerTDO).State = EntityState.Modified;
 
             try
             {
@@ -77,17 +77,17 @@ namespace AnswerApi.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<UserAnswer>> PostUserAnswer(UserAnswer userAnswer)
+        public async Task<ActionResult<UserAnswerTDO>> PostUserAnswer(UserAnswerTDO userAnswerTDO)
         {
-            _context.UserAnswers.Add(userAnswer);
+            _context.UserAnswers.Add(userAnswerTDO);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetUserAnswer), new { id = userAnswer.Id }, userAnswer);
+            return CreatedAtAction(nameof(GetUserAnswer), new { id = userAnswerTDO.Id }, userAnswerTDO);
         }
 
         // DELETE: api/Answers/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<UserAnswer>> DeleteUserAnswer(long id)
+        public async Task<ActionResult<UserAnswerTDO>> DeleteUserAnswer(long id)
         {
             var userAnswer = await _context.UserAnswers.FindAsync(id);
             if (userAnswer == null)
