@@ -1,7 +1,8 @@
 export const CHAPTER3 = {
 	title: `Chapter III`,
-	content: 'saraghaksjhdfkdsjfkshdfkshkjsdhfkshdf',
-	description: `<h1 align = center>CHAPTER 3</h1>
+	content: '<b>Ano lalagay dito?</b>',
+	description: `
+				<h1 align = center>CHAPTER 3</h1>
 				<h2 align = center>DISK OPERATING SYSTEM COMMANDS</h2>`,
 	objectives: [
 		`Be familiar with the basic commands utilized in DOS environment.`,
@@ -13,27 +14,46 @@ export const CHAPTER3 = {
 			title: 'Disk Operating System',
 			content: `
 				<b>DISK OPERATING SYSTEM</b>
-				<br>
-				<br>
+				<br/>
+				<br/>
 				<p>DOS is an acronym for Disk Operating System. DOS traced back its roots from the emergence of the "Personal Computer (PC)". During those times when IBM was about to launch its new generation computer they are in the dilemma of finding a suitable operating system for their machine. Since disks are the predominant method of storing data before, it was the most popular operating system for microcomputer systems. It is an operating system that provides support services for other programs. Also, DOS is a collection of programs provided as files. These programs provide services such as file and memory management support for devices attached to your computer. The illustration below shows how DOS environment looks like.</p>
-				<br>
+				<br/>
 				<p>IBM sourced out their system to Digital Research, the company that sold their Operating System with its CP/M computer. Digital Research was the leader of those systems that time. But unfortunately, the small company in Seattle, named Microsoft was the company where IBM commissioned to create the operating system for their machines. Microsoft was bold enough to take the challenge of providing IBM with an operating system. MS-DOS was the standard operating system for IBM-compatible personal computers.</p>`,
 		},
 		{
 			title: `Command Prompt`,
 			content: `
 				<b>COMMAND PROMPT</b>
-				<br>
-				<br>
-				<p>You use DOS prompt to enter DOS commands. Theses commands specify to DOS the exact action you wish to take as well as any special information needed to carry out your request. The illustration below shows the DOS environment.</p>`
+				<br/>
+				<br/>
+				<p>You use DOS prompt to enter DOS commands. These commands specify to DOS the exact action you wish to take as well as any special information needed to carry out your request. The illustration below shows the DOS environment.
+				<b>INSERT PHOTO HERE</b>
+				</p>
+				`,
+				sub: [
+				{
+					title: `CLS`,
+					content: `
+						<b>CLS</b>
+						<br/>
+						<br/>
+						<p>This command clears all information from the screen when you are working at the command prompt. To enter this command, type <b>CLS</b> and press enter key.</b>
+						<b>INSERT PHOTO HERE</b>
+						</p>
+						`
+				}
+			]
 		},
 		{
 			title: `How to Change Drive`,
 			content: `
 					<b>HOW TO CHANGE DRIVE</b>
-					<br>
-					<br>
-					<p>When you use command prompt entries, a DOS prompt appears to indiate that DOS is ready to process your next entry. The default setting for this prompt displays a letter representing the active drive. To change from drive C to drive A, type <b>A</b> followed by a colon (:) and press enter key.</p>`,
+					<br/>
+					<br/>
+					<p>When you use command prompt entries, a DOS prompt appears to indiate that DOS is ready to process your next entry. The default setting for this prompt displays a letter representing the active drive. To change from drive C to drive A, type <b>A</b> followed by a colon (:) and press enter key.</p>
+					<br/>
+					<b>INSERT PHOTO HERE</b>
+					`,
 			sub: [
 				{
 					title: `Decimal Number System`,
